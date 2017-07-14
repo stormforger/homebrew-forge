@@ -1,17 +1,11 @@
 class Forge < Formula
-  VERSION = "0.4.0"
-
   desc "The StormForger Command Line Client, called 'forge'"
   homepage "https://stormforger.com"
-  url "https://github.com/stormforger/cli/releases/download/v#{VERSION}/forge_v#{VERSION}_darwin_amd64.zip"
-  version VERSION
-  sha256 "ca735e0627f7b71304cf6c6c575f4e2b527195e018ce733f6ba90abc2df49888"
+  url "https://github.com/stormforger/cli/releases/download/v0.5.0/forge_v0.5.0_darwin_amd64.zip"
+  version "0.5.0"
+  sha256 "3a14bcfcc05cf5aa48eee9da97ff66c18a2daa065bf33c716cca413caac3281c"
 
   def install
-    bin.install Dir["*"]
-  end
-
-  test do
-    system "#{bin}/forge version"
+    bin.install "forge"
   end
 end
