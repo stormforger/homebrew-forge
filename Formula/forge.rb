@@ -1,9 +1,9 @@
 class Forge < Formula
   desc "The StormForger Command Line Client, called 'forge'"
   homepage "https://stormforger.com"
-  url "https://github.com/stormforger/cli/releases/download/v0.9.0/forge_v0.9.0_darwin_amd64.zip"
-  version "0.9.0"
-  sha256 "443fa1ec000125e0f258abe1d8217136db84795ae2a13d8fb23467f23e6e1ba8"
+  url "https://github.com/stormforger/cli/releases/download/v0.10.0/forge_v0.10.0_darwin_amd64.zip"
+  version "0.10.0"
+  sha256 "8d019eebc6e48fcd66694e1175fa7d352c8e05d1dbe6b1043749432d45bb3c40"
 
   def install
     bin.install "forge"
