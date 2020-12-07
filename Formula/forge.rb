@@ -2,26 +2,25 @@
 class Forge < Formula
   desc "The StormForger Command Line Client, called 'forge'"
   homepage "https://stormforger.com"
-  version "0.41.0"
+  version "0.42.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/stormforger/cli/releases/download/v0.41.0/forge_v0.41.0_darwin_amd64.zip"
-    sha256 "e30d7576ab013b37bb264a92654ec4324cf054b83581b76c390c727bbffc16fe"
-  elsif OS.linux?
-    if Hardware::CPU.intel?
-      url "https://github.com/stormforger/cli/releases/download/v0.41.0/forge_v0.41.0_linux_amd64.tar.gz"
-      sha256 "09642ed735837ba2abe587036d8eee2bf262e3e48a64fb300320280586ff2bec"
-    end
+    url "https://github.com/stormforger/cli/releases/download/v0.42.0/forge_v0.42.0_darwin_amd64.zip"
+    sha256 "135574fee67ffe9c7df9a5cb91f3b02e8e00d22d6d72eb2d816ee5e48ceeca4e"
+  end
+  if OS.linux? && Hardware::CPU.intel?
+    url "https://github.com/stormforger/cli/releases/download/v0.42.0/forge_v0.42.0_linux_amd64.tar.gz"
+    sha256 "8d8605ed141b570f291b55a8bb6fa95f828b5fe4f30a3d2a283fea166959f8e6"
   end
 
   def install
     bin.install "forge"
-    
+
     # generate and install bash completion
     output = Utils.safe_popen_read("#{bin}/forge", "completion", "bash")
     (bash_completion/"forge").write output
-    
+
     # generate and install zsh completion
     output = Utils.safe_popen_read("#{bin}/forge", "completion", "zsh")
     (zsh_completion/"_forge").write output
