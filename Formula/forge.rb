@@ -5,16 +5,16 @@
 class Forge < Formula
   desc "The StormForger Command Line Client, called 'forge'"
   homepage "https://stormforger.com"
-  version "0.43.1"
+  version "0.44.0"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/stormforger/cli/releases/download/v0.43.1/forge_v0.43.1_darwin_amd64.zip"
-    sha256 "672172e0c75ef898b05dbfdc1e6b65b5a4eec427733da06ecfb2c1f2550887b6"
+    url "https://github.com/stormforger/cli/releases/download/v0.44.0/forge_v0.44.0_darwin_amd64.zip"
+    sha256 "e40f45ed02a21627f3b9e2cb05ebf572424e1e69b2a8c2351fc5366c6fd12cd7"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/stormforger/cli/releases/download/v0.43.1/forge_v0.43.1_linux_amd64.tar.gz"
-    sha256 "9c74fab1fd06092d19ba44368782e3baa481769c4c633e9b4cf8b56b87e82665"
+    url "https://github.com/stormforger/cli/releases/download/v0.44.0/forge_v0.44.0_linux_amd64.tar.gz"
+    sha256 "534ead4e6fea0e130bb6eec48bb78e782fb9eedbe7f8a3c76c12bef36b617bd9"
   end
 
   def install
