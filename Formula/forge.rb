@@ -5,24 +5,29 @@
 class Forge < Formula
   desc "The StormForger Command Line Client, called 'forge'"
   homepage "https://stormforger.com"
-  version "0.45.0"
+  version "0.45.1"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/stormforger/cli/releases/download/v0.45.0/forge_v0.45.0_darwin_amd64.zip"
-    sha256 "4b768ef73b2c80cdac8f9806f444e663ba2ad5985615a8df91accf07a137e52a"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/stormforger/cli/releases/download/v0.45.1/forge_v0.45.1_darwin_amd64.zip"
+      sha256 "900f0d133310d895a6539b488e2f2d3af8cbb157ae42164c8b09d26413695447"
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/stormforger/cli/releases/download/v0.45.1/forge_v0.45.1_darwin_arm64.zip"
+      sha256 "03b77e02773c39e26cf47546fa359a1b9df1b523ee1868815835350b28f31d89"
+    end
   end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/stormforger/cli/releases/download/v0.45.0/forge_v0.45.0_darwin_arm64.zip"
-    sha256 "7b55489f5335a43372cde446757259fd2babc19e17a4b3d5d879bbfa412853fb"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/stormforger/cli/releases/download/v0.45.0/forge_v0.45.0_linux_amd64.tar.gz"
-    sha256 "ae99020d0ddb9dff52b1d0197489dd731bdf56cf9a5c85dd5e5932776041ea6e"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/stormforger/cli/releases/download/v0.45.0/forge_v0.45.0_linux_arm64.tar.gz"
-    sha256 "3caa12ca68068d3e86c7ccb3346e2a14017c30b7093395ff4ac4a00ffcfb3921"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/stormforger/cli/releases/download/v0.45.1/forge_v0.45.1_linux_amd64.tar.gz"
+      sha256 "0732c095913b51c7b701de75ab02cbd61e628c3b4753efdd4a469ee9c5815e9a"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/stormforger/cli/releases/download/v0.45.1/forge_v0.45.1_linux_arm64.tar.gz"
+      sha256 "648d53b010e409203039ab094974a735395be8c4cceacb455bd93c70aec6618f"
+    end
   end
 
   def install
