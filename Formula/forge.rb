@@ -5,28 +5,28 @@
 class Forge < Formula
   desc "The StormForger Command Line Client, called 'forge'"
   homepage "https://stormforger.com"
-  version "0.45.1"
+  version "0.45.2"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/stormforger/cli/releases/download/v0.45.1/forge_v0.45.1_darwin_amd64.zip"
-      sha256 "900f0d133310d895a6539b488e2f2d3af8cbb157ae42164c8b09d26413695447"
+      url "https://github.com/stormforger/cli/releases/download/v0.45.2/forge_v0.45.2_darwin_amd64.zip"
+      sha256 "b0cd6c9cbb9aefd2e3542967db0629b8620eeed02ca17d10ef74fbaa67e29765"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/stormforger/cli/releases/download/v0.45.1/forge_v0.45.1_darwin_arm64.zip"
-      sha256 "03b77e02773c39e26cf47546fa359a1b9df1b523ee1868815835350b28f31d89"
+      url "https://github.com/stormforger/cli/releases/download/v0.45.2/forge_v0.45.2_darwin_arm64.zip"
+      sha256 "56155686a86e381662a980c4fac0c36c2a20f17b41149b177fac661a1fda7816"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/stormforger/cli/releases/download/v0.45.1/forge_v0.45.1_linux_amd64.tar.gz"
-      sha256 "0732c095913b51c7b701de75ab02cbd61e628c3b4753efdd4a469ee9c5815e9a"
+      url "https://github.com/stormforger/cli/releases/download/v0.45.2/forge_v0.45.2_linux_amd64.tar.gz"
+      sha256 "7e754786e6a8e8ec8f0858addd3a59c20fe3ddc5776745cdd23005e25192b0cf"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/stormforger/cli/releases/download/v0.45.1/forge_v0.45.1_linux_arm64.tar.gz"
-      sha256 "648d53b010e409203039ab094974a735395be8c4cceacb455bd93c70aec6618f"
+      url "https://github.com/stormforger/cli/releases/download/v0.45.2/forge_v0.45.2_linux_arm64.tar.gz"
+      sha256 "e83113ab536dd77d932857263cb73b85a5898204516e501b1c974851ca321a86"
     end
   end
 
