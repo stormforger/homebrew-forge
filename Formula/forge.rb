@@ -5,12 +5,12 @@
 class Forge < Formula
   desc "The StormForger Command Line Client, called 'forge'"
   homepage "https://stormforger.com"
-  version "0.48.3"
+  version "0.48.4"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/stormforger/cli/releases/download/v0.48.3/forge_v0.48.3_darwin_arm64.zip"
-      sha256 "41f22851ccd4f0e29d24b18d0f422f834825054b1570459d46457183c8ea50d3"
+      url "https://github.com/stormforger/cli/releases/download/v0.48.4/forge_v0.48.4_darwin_arm64.zip"
+      sha256 "1005cdbbd37029f9ef4f585285bab910056ba0682853c6fc3850ce518a5c0745"
 
       def install
         bin.install "forge"
@@ -25,8 +25,8 @@ class Forge < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/stormforger/cli/releases/download/v0.48.3/forge_v0.48.3_darwin_amd64.zip"
-      sha256 "a4b9e922cfc3ebcf43a79424dbed6b8f0b11c47c052198c00ee46dface58ff5c"
+      url "https://github.com/stormforger/cli/releases/download/v0.48.4/forge_v0.48.4_darwin_amd64.zip"
+      sha256 "efde745385692a8ac5c8a5be0163d917609e20dd8d87ff04abe028722c3a5004"
 
       def install
         bin.install "forge"
@@ -44,8 +44,8 @@ class Forge < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/stormforger/cli/releases/download/v0.48.3/forge_v0.48.3_linux_arm64.tar.gz"
-      sha256 "43b622793531762211211eb1d875a8ebfa2c7f2a104fb9b9dbdc51dff4af1268"
+      url "https://github.com/stormforger/cli/releases/download/v0.48.4/forge_v0.48.4_linux_arm64.tar.gz"
+      sha256 "a7a9a90450fa372cf0d0970303ddb5633029ffe950c7f4a573abe955a6992a26"
 
       def install
         bin.install "forge"
@@ -60,8 +60,8 @@ class Forge < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/stormforger/cli/releases/download/v0.48.3/forge_v0.48.3_linux_amd64.tar.gz"
-      sha256 "bbeb83f9e97b6ee9474053ea01ace00c4cfc8687311e6c4df9e3d9b6cfe80637"
+      url "https://github.com/stormforger/cli/releases/download/v0.48.4/forge_v0.48.4_linux_amd64.tar.gz"
+      sha256 "86e3f9052078c4b3d364e0514afa3a7665fddb76d60135d3114dfe356b3c4afe"
 
       def install
         bin.install "forge"
