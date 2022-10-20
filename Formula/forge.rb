@@ -5,12 +5,12 @@
 class Forge < Formula
   desc "The StormForger Command Line Client, called 'forge'"
   homepage "https://stormforger.com"
-  version "0.48.5"
+  version "0.49.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/stormforger/cli/releases/download/v0.48.5/forge_v0.48.5_darwin_amd64.zip"
-      sha256 "46dbeb02d205165fbb4af5521210092acac75928a792bd68be4102f570061dc9"
+      url "https://github.com/stormforger/cli/releases/download/v0.49.0/forge_v0.49.0_darwin_amd64.zip"
+      sha256 "8edb2e63ea8cb3ce2705351a62d35ed1135a94bf0d33a0ec8748db58ac1e815a"
 
       def install
         bin.install "forge"
@@ -25,8 +25,8 @@ class Forge < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/stormforger/cli/releases/download/v0.48.5/forge_v0.48.5_darwin_arm64.zip"
-      sha256 "632d1079abab5e4da1b101d019444706d779e90b3540952516e8772ba919e1f1"
+      url "https://github.com/stormforger/cli/releases/download/v0.49.0/forge_v0.49.0_darwin_arm64.zip"
+      sha256 "386956559601b9d2e4444c67d9d75a3bbff1c2ec6b735eeecd59657678104922"
 
       def install
         bin.install "forge"
@@ -43,9 +43,9 @@ class Forge < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/stormforger/cli/releases/download/v0.48.5/forge_v0.48.5_linux_amd64.tar.gz"
-      sha256 "88e18c7184958417a38190e628fc6b96766a92fe9511a14bd586137e1081e25c"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/stormforger/cli/releases/download/v0.49.0/forge_v0.49.0_linux_arm64.tar.gz"
+      sha256 "58438a4c730b5fea66231802ed972068258f3cb8b3d9a7f8b29bbb71b9420bbf"
 
       def install
         bin.install "forge"
@@ -59,9 +59,9 @@ class Forge < Formula
         (zsh_completion/"_forge").write output
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/stormforger/cli/releases/download/v0.48.5/forge_v0.48.5_linux_arm64.tar.gz"
-      sha256 "a5eda021753be3c285e066f0cdecf11a69cafa0a86b3aed679cc38df19429b73"
+    if Hardware::CPU.intel?
+      url "https://github.com/stormforger/cli/releases/download/v0.49.0/forge_v0.49.0_linux_amd64.tar.gz"
+      sha256 "d21d23f0e978b047a2c9e0f9d5fa6210f76445db358413b8170a4b6457ba2ff6"
 
       def install
         bin.install "forge"
