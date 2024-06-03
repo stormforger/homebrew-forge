@@ -5,12 +5,12 @@
 class Forge < Formula
   desc "The StormForger Command Line Client, called 'forge'"
   homepage "https://stormforger.com"
-  version "0.52.2"
+  version "0.52.3"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/stormforger/cli/releases/download/v0.52.2/forge_v0.52.2_darwin_amd64.zip"
-      sha256 "726573760a28f8c6dc0925f004fecb536e33092a426393a081a0c0fb0ef90123"
+    on_intel do
+      url "https://github.com/stormforger/cli/releases/download/v0.52.3/forge_v0.52.3_darwin_amd64.zip"
+      sha256 "7560e396f6cb989d47f75c3da78c5ee68f22cb34af3c143cb70e6c417cc826fc"
 
       def install
         bin.install "forge"
@@ -24,9 +24,9 @@ class Forge < Formula
         (zsh_completion/"_forge").write output
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/stormforger/cli/releases/download/v0.52.2/forge_v0.52.2_darwin_arm64.zip"
-      sha256 "ab874a051461a8cac075f4ec5cffe1c66cd08f08e3ac69d5dcf147beb5ff2a62"
+    on_arm do
+      url "https://github.com/stormforger/cli/releases/download/v0.52.3/forge_v0.52.3_darwin_arm64.zip"
+      sha256 "f7fabe538e0bc3ba12ee3bab1beff9ed3ac329a59e591a790bbb0d46a0728a7e"
 
       def install
         bin.install "forge"
@@ -43,36 +43,40 @@ class Forge < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/stormforger/cli/releases/download/v0.52.2/forge_v0.52.2_linux_amd64.tar.gz"
-      sha256 "ae4f3eb9d2ff5d202966e757257a39c459f6ed1d910d20a5882b97d855c2dc6f"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/stormforger/cli/releases/download/v0.52.3/forge_v0.52.3_linux_amd64.tar.gz"
+        sha256 "e8e891b3b560faa10ba3f2826999ff7bd7f9434e7559a4b4037e11120b736c62"
 
-      def install
-        bin.install "forge"
+        def install
+          bin.install "forge"
 
-        # generate and install bash completion
-        output = Utils.safe_popen_read("#{bin}/forge", "completion", "bash")
-        (bash_completion/"forge").write output
+          # generate and install bash completion
+          output = Utils.safe_popen_read("#{bin}/forge", "completion", "bash")
+          (bash_completion/"forge").write output
 
-        # generate and install zsh completion
-        output = Utils.safe_popen_read("#{bin}/forge", "completion", "zsh")
-        (zsh_completion/"_forge").write output
+          # generate and install zsh completion
+          output = Utils.safe_popen_read("#{bin}/forge", "completion", "zsh")
+          (zsh_completion/"_forge").write output
+        end
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/stormforger/cli/releases/download/v0.52.2/forge_v0.52.2_linux_arm64.tar.gz"
-      sha256 "3d98f0c42b2391073fb8068e89a41a3cdd01155e374c0742fbd095972d42dcfe"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/stormforger/cli/releases/download/v0.52.3/forge_v0.52.3_linux_arm64.tar.gz"
+        sha256 "afbf9accfbb172f9671184cf163250a0f807415d4fbc19e70c539c5ca17c51a8"
 
-      def install
-        bin.install "forge"
+        def install
+          bin.install "forge"
 
-        # generate and install bash completion
-        output = Utils.safe_popen_read("#{bin}/forge", "completion", "bash")
-        (bash_completion/"forge").write output
+          # generate and install bash completion
+          output = Utils.safe_popen_read("#{bin}/forge", "completion", "bash")
+          (bash_completion/"forge").write output
 
-        # generate and install zsh completion
-        output = Utils.safe_popen_read("#{bin}/forge", "completion", "zsh")
-        (zsh_completion/"_forge").write output
+          # generate and install zsh completion
+          output = Utils.safe_popen_read("#{bin}/forge", "completion", "zsh")
+          (zsh_completion/"_forge").write output
+        end
       end
     end
   end
