@@ -7,6 +7,8 @@ class Forge < Formula
   homepage "https://stormforger.com"
   version "0.53.0"
 
+  disable! date: "2026-011-15", because: "EOL"
+
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/stormforger/cli/releases/download/v0.53.0/forge_v0.53.0_darwin_amd64.zip"
